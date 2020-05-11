@@ -4,14 +4,14 @@ from PIL import Image
 def custom_sort(t):
     return t[1]
 
-def assemble(datafile, w, h, font, min_freq=1):
+def assemble(datafile, w, h, font, s, min_freq=1):
     l = []
     datalist = []
     data = {}
     datacent = {}
-    chars_to_ignore = ['.', ',', ';', ':']
-    words_to_ignore = ['the', 'of', 'and', 'to', 'for', 'of', 'For']
-    #'the', 'of', 'and', 'to', 'for', 'of', 'For'
+    chars_to_ignore = ['.', ',', ';', ':', '[', ']', '(', ')', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+    words_to_ignore = ['the', 'of', 'and', 'to', 'for', 'of', 'For', 'Is', "is", 'it', 'or', 'Or', 'a', 'A', 'by', 'in', 'that', 'has', 'shall', 'an', 'as']
+    #'the', 'of', 'and', 'to', 'for', 'of', 'For', 'Is', "is", 'it', 'or', 'Or', 'a', 'A', 'by', 'in', 'that', 'has', 'shall', 'an', 'as'
     with open(datafile, 'r') as f:
         checkNone = False
         while(True):
@@ -38,11 +38,9 @@ def assemble(datafile, w, h, font, min_freq=1):
         else:
             data[i] = 1
 
-    n = len(l)
-
     for i in data:
         if(data[i] > min_freq):
-            datacent[i] = round(((data[i]/n) + (1/data[i])/350), 5)
+            datacent[i] = round(((data[i]/len(data)) + (1/data[i])/400), 5)
 
     keys = list(datacent.keys())
 
@@ -51,6 +49,6 @@ def assemble(datafile, w, h, font, min_freq=1):
 
     datalist.sort(key=custom_sort, reverse=True)
 
-    im = generator.generate(datalist, w, h, font)
+    im = generator.generate(datalist, w, h, font, s)
 
     return im

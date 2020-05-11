@@ -2,7 +2,7 @@ from PIL import Image, ImageDraw, ImageFont, ImageStat
 import random
 import spiral
 
-def generate(l, xsize, ysize, font_location):
+def generate(l, xsize, ysize, font_location, fntsize):
 
     im = Image.new('L', (xsize, ysize), 0)
     m = 0
@@ -12,7 +12,7 @@ def generate(l, xsize, ysize, font_location):
         dir = k[random.randrange(0, 2)]
 
         _draw = ImageDraw.Draw(im)
-        fnt = ImageFont.truetype(font_location, size=round((i[1] * (xsize/2) * 8)))
+        fnt = ImageFont.truetype(font_location, size=round((i[1] * (xsize/2) * fntsize)))
         _size = _draw.textsize(i[0], font=fnt)
         
         width, height = _size
