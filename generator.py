@@ -1,12 +1,15 @@
 from PIL import Image, ImageDraw, ImageFont, ImageStat
 import random
 import spiral
+import color
 
-def generate(l, xsize, ysize, font_location, fntsize):
+def generate(l, xsize, ysize, font_location, fntsize, theme):
 
     try:
-        im = Image.new('L', (xsize, ysize), 0)
+        im = Image.new('L', (xsize, ysize), 0).convert('RGB')
         m = 0
+        n = len(l)
+        n1 = 0
 
         for i in l:
             k = [-1, 1]
@@ -22,21 +25,27 @@ def generate(l, xsize, ysize, font_location, fntsize):
             xpos, ypos = ranpos
             point = spiral.Point(xpos, ypos)
 
-            if(getbox(point, _size, im)):
-                print(point.getcoor())
-                _draw.text(point.getcoor(), i[0], fill=255, font=fnt)
+            rancol = color.frompallete(theme)
+
+            if(getbox(point, _size, im.convert('L'))):
+                n1 += 1
+                _draw.text(point.getcoor(), i[0], fill=rancol, font=fnt)
             else:
                 while(True):
                     point.move_spiral(0.005 * dir, a=0.05*dir, b=0.05)
-                    print(point.getcoor())
                     if(point.getcoor()[0] < 0 or point.getcoor()[0] > xsize - width or point.getcoor()[1] < 0 or point.getcoor()[1] > ysize - height):
                         newpoint = spiral.Point(random.randrange((xsize/4), ((xsize/4) * 3) - width), random.randrange(ysize/4, ((ysize/4) * 3) - height))
                         point = newpoint
-                    free = getbox(point, _size, im)
+                    free = getbox(point, _size, im.convert('L'))
                     if(free):
-                        _draw.text(point.getcoor(), i[0], fill=255, font=fnt)
+                        _draw.text(point.getcoor(), i[0], fill=rancol, font=fnt)
+                        n1 += 1
                         break
             
+            perc_done = (n1/n) * 100
+            round_perc = round(perc_done, 2)
+            print(round_perc, '%', 'complete.')
+
             if(random.randrange(0, 2) == 0):
                 im = im.rotate(90)
                 m += 90

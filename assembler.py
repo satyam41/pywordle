@@ -4,7 +4,7 @@ from PIL import Image
 def custom_sort(t):
     return t[1]
 
-def assemble(datafile, w, h, font, s=1.6, min_freq=0):
+def assemble(datafile, w, h, font, s=1.6, min_freq=0, theme="White"):
     l = []
     datalist = []
     data = {}
@@ -49,7 +49,7 @@ def assemble(datafile, w, h, font, s=1.6, min_freq=0):
 
     datalist.sort(key=custom_sort, reverse=True)
 
-    im = generator.generate(datalist, w, h, font, s)
+    im = generator.generate(datalist, w, h, font, s, theme)
     print(len(l))
 
     return im

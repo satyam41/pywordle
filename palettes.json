@@ -1,0 +1,13 @@
+{
+    "ForeverField": ["#FF4500", "#FF8300", "#DF362D", "#B7AC44"],
+    "SeaOfSerenity": ["#059DC0", "#6AF2F0", "#04D4F0", "#04ECF0"],
+    "RosyDew": ["#F9F1F0", "#FADCD9", "#F8AFA6", "#F79489"],
+    "RossetesAndCream": ["#D8A7B1", "#B6E2D3", "#FAE8E0", "#EF7C8E"],
+    "StrawberryFroth": ["#E43D40", "#F37970", "#F85C70", "#FABEC0"],
+    "BeautifulAbstraction": ["#C2E2F5", "#79A9F5", "#4B7BF5", "#0000FF"],
+    "SunsetWaters": ["#A1A9FE", "#4129A9", "#A16AE8", "#F6D4D2"],
+    "CupcakeDelight": ["#A91B60", "#FF0080", "#EC9EC0", "EBE0D0"],
+    "ToweringOver": ["#FFD53D", "#40B0DF", "#0067B3", "#0000A3"],
+    "EverythingNice": ["#FD49A0", "#A16AE8", "#B4FEE7", "#603F8B"],
+    "White": ["#FFFFFF", "#FFFFFF", "#FFFFFF", "#FFFFFF"]
+}
