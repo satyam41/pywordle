@@ -15,4 +15,4 @@
   <li>assemble returns an image, display the image with PIL Image.Image.show() or save it with Image.Image.save()</li>
 </ol>
 
-<p><i>As I have now realized that word sizes are unpredictable, try changing the size parameter when calling assemble to see, what fits best.</i></p>
+<p><i>As I have now realized that word sizes are unpredictable, try changing the size parameter when calling assemble to see what fits best.</i></p>
