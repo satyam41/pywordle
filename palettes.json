@@ -9,5 +9,6 @@
     "CupcakeDelight": ["#A91B60", "#FF0080", "#EC9EC0", "EBE0D0"],
     "ToweringOver": ["#FFD53D", "#40B0DF", "#0067B3", "#0000A3"],
     "EverythingNice": ["#FD49A0", "#A16AE8", "#B4FEE7", "#603F8B"],
-    "White": ["#FFFFFF", "#FFFFFF", "#FFFFFF", "#FFFFFF"]
+    "White": ["#FFFFFF", "#FFFFFF", "#FFFFFF", "#FFFFFF"],
+    "India": ["#FF8000", "#FF8000", "#008000", "FFFFFF", "FFFFFF"]
 }
